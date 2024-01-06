@@ -1,0 +1,440 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  
+  html {
+    text-align: center;
+  }
+  
+  .word {
+    color: black;
+    font-weight: bolder;
+  }
+  
+  header {
+    position:absolute;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 200px;
+    padding: 10px;
+  }
+  
+  footer {
+    color: rgb(237, 237, 237);
+    background-color: #212121;
+    width: 100%;
+    height: auto;
+  }
+  
+  footer img {
+    margin: 10px;
+    width: 18%;
+  }
+  
+  .foot {
+    margin-top: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    display: grid;
+  }
+  
+  
+  .footcard {
+    line-height: 30px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    position: relative;
+    display: flex;
+    height: 6.75rem;
+    width: 100%;
+  }
+  
+  .title {
+    position: center;
+    height: 2rem;
+    font-size: 14pt;
+  }
+  .logo-left {
+    width: 10%;
+    height: auto;
+  }
+  .logo-left img{
+    position: relative;
+    top: 30% ;
+    width: 25%;
+    height: auto;
+  }
+  .logo-center {
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    width: 40%;
+    top: 10%;
+  }
+  
+  .logo-center img {
+    width: 60%;
+    top: 10%;
+  }
+  .logo-right {
+    height: auto;
+    position:absolute;
+    right: 2%;
+    width:auto;
+    top: 35%;
+  }
+  .container{
+    width: 100%;
+    height: auto;
+  }
+  /* 自定义折叠组件样式 */
+  .collapse {
+    background-color: transparent; /* 背景透明 */
+    border: none; /* 无边框 */
+    box-shadow: none; /* 无阴影 */
+    padding: 0; /* 取消默认内边距 */
+  }
+  
+  .collapse .card-body {
+    color: black; /* 字体颜色为黑色 */
+  }
+  
+        /* 修改按钮的颜色和样式 */
+  .btn-primary {
+    background-color: transparent; /* 按钮背景透明 */
+    color: black; /* 按钮文字颜色为黑色 */
+    border: none; /* 无边框 */
+    text-decoration: none; /* 去除下划线 */
+    position: relative;
+  }
+  
+  .btn-primary:hover, .btn-primary:focus {
+    background-color: transparent; /* 鼠标悬停时背景透明 */
+     color: black; /* 鼠标悬停时文字颜色为黑色 */
+  }
+  
+  .btn-primary::after {
+    content: ''; /* 伪元素内容为空 */
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* 控制橙色线条的位置 */
+    width: 100%;
+    height: 2px;
+    background-color: #e67e22; /* 橙色线条颜色 */
+  }
+  .btn-rotate {
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: transform 1s ease;
+  }
+  
+  .btn-rotate:hover {  /*按鈕動畫*/
+    transform: rotateX(330deg);
+  }
+  
+  
+  .v {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .start {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  
+  .product {
+    margin-top: 50px;
+    width: 100%;
+    height: 500px;
+    display: grid;
+    margin: 40px auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+  
+  .Product_card {
+    font-size: 18pt;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .Product_card:hover img,
+  .model :hover img {
+    transform: scale(1.07);
+  }
+  
+  .Product_card img {
+    font-weight: bolder;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    padding-bottom: 10px;
+    width: 60%;
+    height: auto;
+  }
+  
+  .model {
+    font-size: 13pt;
+    color: black;
+    text-align: center;
+    position: relative;
+    background-color: rgb(202, 201, 201);
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    margin-bottom: 3%;
+  }
+  
+  .model a {
+    color: black;
+  }
+  
+  .model img {
+    margin: 10% 10% 5% 10%;
+    width: 80%;
+    height: auto;
+  }
+  
+  .model_card {
+    margin-bottom: 5%;
+  }
+  .ad-container {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    position: relative;
+  }
+  
+  .ad-image {
+    width: 100%;
+    height: auto;
+  }
+  .dynamic_ads{
+    margin: 2% 5% 2% 5%;
+    padding: 5%;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0px; /* 調整距離 top 的值，可以根據需要調整 */
+    right: -350px; /* 初始狀態隱藏在右側 */
+    width: 350px;
+    height:2000%;
+    background-color:#b7b7b7; /* 側邊欄背景顏色 */
+    padding:5%  20px 5% 20px;
+    transition: right 0.3s ease; /* 添加過渡效果 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 將內容垂直置中 */
+    z-index: 100; /* 这里是新增的 z-index 属性 */
+  }
+  
+  .sidebar img{
+    width: 80%;
+  
+  }
+  
+  .sidebar.show {
+    right: 0; /* 显示在右侧 */
+  }
+  .sidebar form {
+    width: 100%; /* 表單寬度 100% */
+    max-width: 350px; /* 表單最大寬度 */
+  }
+  .sidebar div {
+    margin-top: 20px; /* 根據需要調整距離 top 的值 */
+  }
+  /* CSS 樣式 */
+  .password-container {
+    position: relative;
+  }
+  
+  .show-password-label {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  /* CSS 樣式 */
+  .formText {
+    font-size: 36pt;
+    margin-top: 10px;
+    color: #333; /* 設定文字顏色 */
+  }
+  
+  .e-mailbtn{
+    display: none;
+    border-color: none;
+    background-color: #333;
+    color: #fff;
+    width: 40px;
+    border-radius: 15%;
+  }
+  
+  #searchContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  #searchInput {
+    background-color: rgb(244, 244, 242) ;
+    width: 0;
+    height: 25px;
+    overflow: hidden;
+    transition: width 0.3s;
+    padding: 5px;
+    box-sizing: border-box;
+    border: none;
+  }
+  
+  #searchButton {
+    border: none;
+    cursor: pointer;
+  }
+  #formText{
+    font-size: 20pt;
+    font-weight: bold;
+  }
+  
+  #perfumesidebar,
+  #ringsidebar,
+  #necklacesidebar
+  {
+    display: none;
+    transition: display 5s ease;  /* 添加 transition 屬性 */
+    animation: fadeInOut 1.2s ease;
+  }
+  @keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  .logo-right button, 
+  .logo-right input{
+    background-color: #b7b7b700;
+    border: none;
+  }
+  
+  form{
+    margin-top: 10%;
+    width: 30%;
+  }
+  
+  #collapseExample6{
+    z-index: 90;
+    position: absolute;
+    right: 2%;
+    top: 70%;
+  }
+  
+  #bta{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+  
+  }
+  
+  .list{
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+  }
+  
+  .centered-container {
+    display: flex;
+    flex-direction: column; /* 將子元素排列改為垂直方向 */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .centered-container h6 {
+    margin: 0; /* 移除預設的邊距，避免影響置中效果 */
+  }
+  
+  .maindiv{
+    padding-top: 10% !important;
+    height: auto;
+    width: 80%;
+    margin:5% 10%;
+    background-color:rgb(217, 221, 224);
+  }
+
+  @keyframes Exper{
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .Experience{
+    text-align: center;
+    width: 100%;
+    height: 400px;
+    animation-name: Exper;
+    animation-duration: 2.2s;
+  }
+  .exp_right{
+    padding: 1%;
+    width: 70%;
+    height: 100%;
+    float: right;
+  }
+  .exp_left{
+    width: 30%;
+    float: left;
+    height: 100%;
+  }
+  
+  .exp_left img{
+    border-radius: 50%; width: 50% !important;height: auto !important;top: 50px;left: 15%;display: flexbox; margin-bottom: 7%;
+  }
+  
+  p{
+    font-size: larger;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .socia{
+    margin-top: 5%;
+  }
+  .socia a{
+    font-weight: bold;
+    color: #212121;
+    margin: 1%;
+    text-decoration: none;
+  }
+  h1{
+    font-weight: bolder ;
+  }

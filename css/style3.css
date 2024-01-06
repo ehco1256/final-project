@@ -1,0 +1,418 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+html {
+    text-align: center;
+  }
+  header{
+    position: fixed;
+    position: relative;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+  height: 10.25rem;
+  padding: 10px;
+  }
+  head{
+    font-weight: bold;
+    margin-bottom: 20px ;
+  }
+  footer {
+    color: rgb(237, 237, 237);
+    background-color: #212121;
+    width: 100%;
+    height: auto;
+  }
+  
+  footer img {
+    margin: 10px;
+    width: 18%;
+  }
+  .foot {
+    margin-top: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    display: grid;
+  }
+  
+  
+  .footcard {
+    line-height: 30px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .logo-left {
+    width: 10%;
+    height: auto;
+  }
+  .logo-left img{
+    position: relative;
+    top: 30% ;
+    width: 25%;
+    height: auto;
+  }
+  .logo-center {
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    width: 40%;
+    top: 10%;
+  }
+  
+  .logo-center img {
+    width: 60%;
+    top: 10%;
+  }
+  .logo-right {
+    position:absolute;
+    right: 2%;
+    width:auto;
+    top: 35%;
+  }
+  #searchContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  #searchInput {
+    background-color: rgb(244, 244, 242) ;
+    width: 0;
+    height: 25px;
+    overflow: hidden;
+    transition: width 0.3s;
+    padding: 5px;
+    box-sizing: border-box;
+    border: none;
+  }
+  form{
+    position: relative;
+    top: 5%;
+    margin-top: 5%;
+    height: 500px;
+  }
+  #searchButton {
+    border: none;
+    cursor: pointer;
+  }
+  #formText{
+    font-size: 20pt;
+    font-weight: bold;
+  }
+  
+  #perfumesidebar,
+  #ringsidebar,
+  #necklacesidebar
+  {
+    display: none;
+    transition: display 5s ease;  /* 添加 transition 屬性 */
+    animation: fadeInOut 1.2s ease;
+  }
+  @keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  .logo-right button, 
+  .logo-right input{
+    background-color: #b7b7b700;
+    border: none;
+  }
+
+  .container{
+    position: relative;
+    top: 70%;
+    width: 100%;
+    height: auto;
+  }
+  /* 自定义折叠组件样式 */
+.collapse {
+    background-color: transparent; /* 背景透明 */
+    border: none; /* 无边框 */
+    box-shadow: none; /* 无阴影 */
+    padding: 0; /* 取消默认内边距 */
+  }
+  
+  .collapse .card-body {
+    color: black; /* 字体颜色为黑色 */
+  }
+  .btn-primary {
+    background-color: transparent; /* 按钮背景透明 */
+    color: black; /* 按钮文字颜色为黑色 */
+    border: none; /* 无边框 */
+    text-decoration: none; /* 去除下划线 */
+    position: relative;
+  }
+  
+  .btn-primary:hover, .btn-primary:focus {
+    background-color: transparent; /* 鼠标悬停时背景透明 */
+     color: black; /* 鼠标悬停时文字颜色为黑色 */
+  }
+  
+  .btn-primary::after {
+    content: ''; /* 伪元素内容为空 */
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* 控制橙色线条的位置 */
+    width: 100%;
+    height: 2px;
+    background-color: #e67e22; /* 橙色线条颜色 */
+  }
+  .btn-rotate {
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: transform 1s ease;
+  }
+  
+  .btn-rotate:hover {  /*按鈕動畫*/
+    transform: rotateX(330deg);
+  }
+
+  
+.e-mailbtn{
+    display: none;
+    border-color: none;
+    background-color: #333;
+    color: #fff;
+    width: 40px;
+    border-radius: 15%;
+  }
+
+  aside {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+
+}
+
+.mc_left{
+    width: 90%;
+}
+.input01 {
+    width: 250px;
+    height: 35px;
+    padding: 5px;
+    margin-bottom: 40px;
+    border: 1px solid #adadad;
+}
+
+.container02 {
+    display: flex;
+}
+
+.text01 {
+    margin-right: 50px;
+}
+
+.input02 {
+    width: 562px;
+    height: 35px;
+    padding: 5px;
+    margin-bottom: 40px;
+    margin-left: 0px;
+    border: 1px solid #adadad;
+}
+
+.container03 {
+    display: flex;
+}
+
+.text02 {
+    margin-right: 20px;
+}
+
+.input03 {
+    width: 452px;
+    height: 35px;
+    padding: 5px;
+    border: 1px solid #adadad;
+}
+
+.select {
+    border: 1px solid #adadad;
+    width: 90px;
+    height: 46px;
+}
+
+.card01 {
+    background-color: #fafafa;
+    margin-left: 50px;
+    height: 500px;
+}
+
+.text03 {
+    text-align: center;
+}
+
+.picture1 {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.text04 {
+    font-family: 微軟正黑體;
+    color: #8d8d8d;
+    margin-right: 80px;
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: left;
+}
+
+.text05 {
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.separator {
+    border-top: 1px solid #d8d5d5;
+    margin: 30px 0;
+    background: none;
+    width: 100%;
+}
+
+.text06 {
+    text-align: left;
+    margin-left: 25px;
+    font-family: 微軟正黑體;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.text07 {
+    text-align: center;
+    font-family: 微軟正黑體;
+    font-size: 15px;
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.text08 {
+    text-align: right;
+    font-family: 微軟正黑體;
+    margin-right: 25px;
+    margin-left: 265px;
+    align-items: center;
+    font-size: 15px;
+}
+
+#button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#button:hover {
+    background-color: #757373;
+}
+
+#button:active {
+    background-color: #8d8d8d;
+}
+
+.container-main-aside {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.main-container{
+position: relative;
+left: 10%;
+right: 10%;
+  justify-content: center;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: 1fr;
+  display: grid;
+  position: relative;
+  top: 10%;
+  width: 80%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  height: 600px;
+}
+
+.main-container2{
+  justify-content: center;
+  position: relative;
+  left: 10%;
+  right: 10%;
+    justify-content: center;
+    position: relative;
+    top: 10%;
+    width: 80%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    height: 600px;
+  }
+
+.inputbtn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.inputbtn:hover {
+  background-color: #757373;
+}
+
+.inputbtn:active {
+  background-color: #8d8d8d;
+}
+
+#collapseExample6{
+  z-index: 90;
+  position: absolute;
+  right:1%;
+  top: 70%;
+}
+
+#bta{
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+
+}
+
+.list{
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: 1fr;
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column; /* 將子元素排列改為垂直方向 */
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-container h6 {
+  margin: 0; /* 移除預設的邊距，避免影響置中效果 */
+}
