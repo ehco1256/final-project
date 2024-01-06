@@ -1,0 +1,12 @@
+index 主頁
+
+backstage 後臺資料
+
+buy 單一商品介面(DEMO樣板在香水商品列表第一個商品)
+
+ring necklace perfume 商品列表
+
+pay 付款頁面 
+ 
+因為後端還沒接資料驗證，目前到後台頁面方式為按下登入鍵跳轉
+
