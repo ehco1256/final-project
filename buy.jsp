@@ -1,0 +1,364 @@
+<%@page contentType="text/html;charset=utf-8" language="java" import="java.sql.*"%>
+<%@ page import="javax.naming.Context" %>
+<%@ page import="javax.naming.InitialContext" %>
+<%@ page import="javax.sql.DataSource" %>
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品頁面</title>
+    <link rel="icon" href="p/icon.ico">
+    <link rel="stylesheet" href="css/style4.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<%
+//連接資料庫
+Class.forName("com.mysql.jdbc.Driver");
+
+String url="jdbc:mysql://localhost/?serverTimezone=UTC";
+Connection con=DriverManager.getConnection(url,"root","1234");
+String sql="USE `goods`";
+con.createStatement().execute(sql);
+
+//jsp連接前端
+	sql="select * from goods where id='001'";
+    ResultSet rs=con.createStatement().executeQuery(sql);
+    rs.next();
+
+%>
+
+<body>
+
+   <!--連結 Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.6/dist/umd/popper.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="js/script4.js"></script>
+
+
+   <header id="site-header">
+    <div class="logo"> <!--頂端頁-->
+        <div class="logo-center">
+            <a href="index.jsp"><img src="p/logo/-2.svg" alt=""></a>
+        </div>
+        <div class="logo-right">
+            <nav style="display: flex; align-items: center;">
+                <div id="searchContainer">
+                    <input type="text" id="searchInput" placeholder="尋找什麼....">
+                    <button type="button" id="searchButton" onclick="toggleSearch()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search mx-2" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <button class="btn btn-light btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart mx-2" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+        <div class="collapse" id="collapseExample6">
+            <div class="card card-body" style="width: 300px;height: 400px;">
+                <head>
+                    <h5 style="justify-content: center;font-weight: bold;">購物車</h5>
+                </head>
+                <main style="height: 80%;" class="ce6">
+                    <div class="list">
+                    <div>
+                        <img src="p/PAY/necklace1.webp" alt="" width="100" height="100">
+                    </div>
+                    <div style="display: flex;justify-content: center;align-items: center;">
+                        <h6>NT$ 2,880</h6>
+                        <h6>數量：1</h6>
+                    </div>
+                    </div>
+
+                </main>
+                <foot style="justify-content: center;">
+                    <a href="pay.html">
+                        <input type="submit" value="付款" id="bta">
+                    </a>
+                </foot>
+            </div>
+        </div>
+
+    </div>
+    <div class="container"> <!--選單列-->
+        <p>
+            <a class="btn btn-primary btn-rotate" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                About Us
+            </a>
+            <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                History
+            </button>
+            <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                Services
+            </button>
+            <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
+                Products
+            </button>
+            <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
+                Contact
+            </button>
+        </p>
+        <!--選單列內文-->
+        <div>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    將時尚融入生活，獻上獨特饰品、精緻项鍊及撩人香氛。點綴每位用戶，綻放獨特魅力。
+                </div>
+            </div>
+            <div class="collapse" id="collapseExample2">
+                <div class="card card-body">
+                    "Vogue Essence 源自悠久歷史，百年匠心傳承，精湛工藝雕琢細緻品質。獨創的設計靈感來自悠久歷史的瑰寶，每一件珠寶都是匠心獨運的傑作，承載著時光的記憶。品牌深深植根於傳統與時尚的交汇之地，將卓越品質傳承發揚，致敬優雅精緻的生活方式，為每位追求卓越的您打造獨一無二的精品體驗。"
+                </div>
+            </div>
+            <div class="collapse" id="collapseExample3">
+                <div class="card card-body">
+                    <a href="" style="color: black;">常見問題</a>
+                </div>
+            </div>
+            <div class="collapse" id="collapseExample4">
+                <div class="card card-body">
+                    <div style="margin-bottom: 10px;"> <!--戒指列表-->
+                        <button type="btn btn-light" style="border: none;background-color: #21212100;" id="ringButton" onclick="ring()">
+                            戒指
+                        </button>
+                        <div id="ringsidebar" style="display: none;">
+                            <a href="ring.html" style="color: black;margin-left: 10px;">2023美式經典款</a>
+                            <a href="ring.html" style="color: black;margin-left: 10px;">Exquisite Classics 系列</a>
+                            <a href="ring.html" style="color: black;margin-left: 10px;">Vogue Essence Pro系列</a>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 10px;"> <!--項鍊列表-->
+                        <button type="btn btn-light" style="border: none;background-color: #21212100;" id="necklaceButton" onclick="necklace()">
+                            項鍊
+                        </button>
+                        <div id="necklacesidebar" style="display: none;">
+                            <a href="necklace.html" style="color: black;margin-left: 10px;">Wings of Freedom 系列</a>
+                            <a href="necklace.html" style="color: black;margin-left: 10px;">Vogue Essence Pro系列</a>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 10px;">  <!--香水列表-->
+                        <button type="btn btn-light" style="border: none;background-color: #21212100;" id="perfumeButton" onclick="perfume()">
+                            香水
+                        </button>
+                        <div id="perfumesidebar" style="display: none;">
+                            <a href="perfume.html" style="color: black;margin-left: 10px;">Orchid Reverie 系列</a>
+                            <a href="perfume.html" style="color: black;margin-left: 10px;">Vogue Essence Pro系列</a>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="collapse" id="collapseExample5">
+                <div class="card card-body">
+                    <a href="" style="color: black;">聯絡我們</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <main>
+        
+        <section class="model">
+            <!--商品-->
+            <section class="model_card">
+                <img src="<%=rs.getString(4)%>" alt="">   
+                <!--<h3>2023美式經典款</h3>
+                <h3><a href="" title="know_more" class="word">瞭解更多</a></h3>-->
+            </section>
+            <section class="model_card">
+                <h2 class="text-with-padding"> <%=rs.getString(2)%> </h2>
+                <h5 class="text-with-margin"> NT$<%=rs.getString(3)%> </h5>
+				<h6 class="text-with-margin"> 商品剩餘數量:<%=rs.getString(5)%> </h6>				
+                <button class="oval-button">放入購物車</button>				
+            </section>
+        </section>
+		<!--留言板-->
+		<section class="sugcard">
+		<form id="postMessage"  method="post" action="postMessage.jsp">
+		<section><h5 class="sug">留言板</h5></section>
+		<section class="sugcard">
+		<label for="message"></label>
+        <textarea id="message" name="message" rows="4" cols="90" id="message" name="message" required></textarea><br><br>
+		<input type="submit" class="btn btn-dark" value="發送留言" > </button>
+		</section>   
+		</form>
+		</section>
+    <section><h5 class="sug">最新留言:</h5></section><br>
+<%
+    Connection conn = null;
+    Statement stmt = null;
+    ResultSet rss = null;
+
+    
+        // 取得資料庫連線
+		String urll="jdbc:mysql://localhost/?serverTimezone=UTC";
+		conn=DriverManager.getConnection(urll,"root","1234");
+		String sqll="USE `message`";
+		conn.createStatement().execute(sqll);
+        // 執行 SQL 查詢，按照 timestamp 排序
+        String query = "SELECT * FROM message ORDER BY timestamp DESC";
+        stmt = conn.createStatement();
+        rss = stmt.executeQuery(query);
+
+        // 取得資料並顯示在網頁上
+        while (rss.next()) {
+            
+            String content = rss.getString("message");
+            Timestamp timestamp = rss.getTimestamp("timestamp");
+
+            // 這裡可以將資料顯示在網頁上，例如使用 HTML 或其他方式            
+        
+      
+%>
+       <section class="sugcard">
+            <section class="suggess">
+				<p class="sug01">xxxxx</p>
+                <p class="sug03">留言: <%= content %> </p>
+				<p class="sug02">發布時間: <%= timestamp.toString() %></p>
+            </section>
+        </section>
+		
+		<%}%>
+        <section><h5 class="sug">商品評價</h5></section>
+        <section class="sugcard">
+            <section class="suggess">
+                <p class="sug01">xxxxx</p>
+                <p class="sug02">4.5/5</p>
+                <p class="sug03">這個商品真是太棒了！品質優良，外觀設計獨特，物超所值。絕對是我最喜愛的購物之一，強烈推薦給大家！</p>
+            </section>
+        </section>
+
+        <section class="sugcard">
+            <section class="suggess">
+                <p class="sug01">xxxxx</p>
+                <p class="sug02">4.5/5</p>
+                <p class="sug03">商品實用又美觀，完全符合預期。包裝仔細，速度也很快，整體購物體驗非常滿意，下次還會繼續光顧！</p>
+            </section>
+        </section>
+
+        <section class="sugcard">
+            <section class="suggess">
+                <p class="sug01">xxxxx</p>
+                <p class="sug02">4.5/5</p>
+                <p class="sug03">超級喜歡這個商品，質感一流，價格合理。購物過程順暢，客服也很親切。下次有需要一定會再來購買其他商品！</p>
+            </section>
+        </section>
+        <h1>猜你喜歡....</h1>
+        <div class="dynamic_ads"> <!--動態廣告-->
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <!-- 圖片切換按鈕 在圖片底部的那個 -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner"> <!-- 動態廣告圖片與內文 -->
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="p/perfume/perfume11.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="p/ring/ring10.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="p/necklace/necklace6.png" class="d-block w-100" alt="..." >
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div> <!-- 左右切換按鈕 -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                        data-bs-slide="prev"> <!-- 往回切換按鈕 -->
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                        data-bs-slide="next"> <!-- 向下切換按鈕 -->
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+</body>
+	
+<footer>
+    <img src="p/logo/-2.svg"> <!-- logo -->
+
+    <section class="foot">
+        <section class="footcard"> <!-- 訂閱最新資訊 -->
+            <h5>訂閱最新資訊</h5>
+            <input type="email" name="mail" size="30" max="30" placeholder  ="電子郵件地址"
+                style="background-color:  #212121; color:aliceblue;border-style:none;border-bottom: 1px solid #c6c6c6;height: 20px;">
+                <button type="submit" class="e-mailbtn" id="submit_e-mail">送出</button>
+            <ul>最新訊息</ul>
+        </section>
+        <section class="footcard"> <!-- 顧客服務 -->
+            <h5>顧客服務</h5>
+            <ul>
+                聯絡我們
+            </ul>
+            <ul>
+                常見問題
+            </ul>
+        </section>
+        <section class="footcard">  <!-- 關於我們 -->
+            <h5>關於我們</h5>
+            <ul>
+                法律聲明
+            </ul>
+            <ul>
+                隱私政策
+            </ul>
+            <ul>
+                最新消息
+            </ul>
+            <ul>
+                Cookie 政策
+            </ul>
+            <ul>
+                退換貨政策
+            </ul>
+        </section>
+        <section class="footcard"> <!-- 瀏覽產品 -->
+            <h5>瀏覽產品</h5>
+            <nav>
+                <ul>
+                    戒指
+                </ul>
+                <ul>
+                    項鍊
+                </ul>
+                <ul>
+                    香水
+                </ul>
+            </nav>
+        </section>
+    </section>
+
+	
+    <p style="font-size: 10pt;">@Copyright Vogue Essence 2023</P>
+</footer>
+
+
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vogue Essence</title>
+    <link rel="icon" href="p/icon.ico">
+    <link rel="stylesheet" href="css/style6.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+<body>
+       <!--連結 Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/script6.js"></script>
+
+
+    <header id="site-header">
+        <div class="logo"> <!--頂端頁-->
+            <div class="logo-center">
+                <a href="index.html"><img src="p/logo/-2.svg" alt=""></a>
+            </div>
+            <div class="logo-right">
+                <nav style="display: flex; align-items: center;">
+                    <div id="searchContainer">
+                        <input type="text" id="searchInput" placeholder="尋找什麼....">
+                        <button type="button" id="searchButton" onclick="toggleSearch()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search mx-2" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <button class="btn btn-light btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart mx-2" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                
+                    <button type="btn btn-primary" id="userButton" data-toggle="popover" data-placement="bottom" data-html="true" data-content="<div style='width: 200px; height: 200px; background-color: #f0f0f0;'></div>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person mx-2" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"/>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+            <div class="collapse" id="collapseExample6">
+                <div class="card card-body" style="width: 300px;height: 400px;">
+                    <head>
+                        <h5 style="justify-content: center;font-weight: bold;">購物車</h5>
+                    </head>
+                    <main style="height: 80%;" class="ce6">
+                        <div class="list">
+                        <div>
+                            <img src="p/PAY/necklace1.webp" alt="" width="100" height="100">
+                        </div>
+                        <div style="display: flex;justify-content: center;align-items: center;">
+                            <h6>NT$ 2,880</h6>
+                            <h6>數量：1</h6>
+                        </div>
+                        </div>
+    
+                    </main>
+                    <foot style="justify-content: center;">
+                        <a href="pay.html">
+                            <input type="submit" value="付款" id="bta">
+                        </a>
+                    </foot>
+                </div>
+            </div>
+
+        </div>
+        <div class="container"> <!--選單列-->
+            <p>
+                <a class="btn btn-primary btn-rotate" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    About Us
+                </a>
+                <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                    History
+                </button>
+                <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                    Services
+                </button>
+                <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
+                    Products
+                </button>
+                <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
+                    Contact
+                </button>
+            </p>
+            <!--選單列內文-->
+            <div>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        將時尚融入生活，獻上獨特饰品、精緻项鍊及撩人香氛。點綴每位用戶，綻放獨特魅力。
+                        <a href="Experience.html" style="color: black;">組員資訊</a>
+                    </div>
+                </div>
+                <div class="collapse" id="collapseExample2">
+                    <div class="card card-body">
+                        "Vogue Essence 源自悠久歷史，百年匠心傳承，精湛工藝雕琢細緻品質。獨創的設計靈感來自悠久歷史的瑰寶，每一件珠寶都是匠心獨運的傑作，承載著時光的記憶。品牌深深植根於傳統與時尚的交汇之地，將卓越品質傳承發揚，致敬優雅精緻的生活方式，為每位追求卓越的您打造獨一無二的精品體驗。"
+                    </div>
+                </div>
+                <div class="collapse" id="collapseExample3">
+                    <div class="card card-body">
+                        <a href="" style="color: black;">常見問題</a>
+                    </div>
+                </div>
+                <div class="collapse" id="collapseExample4">
+                    <div class="card card-body">
+                        <div style="margin-bottom: 10px;"> <!--戒指列表-->
+                            <button type="btn btn-light" style="border: none;background-color: #21212100;" id="ringButton" onclick="ring()">
+                                戒指
+                            </button>
+                            <div id="ringsidebar" style="display: none;">
+                                <a href="ring.html" style="color: black;margin-left: 10px;">2023美式經典款</a>
+                                <a href="ring.html" style="color: black;margin-left: 10px;">Exquisite Classics 系列</a>
+                                <a href="ring.html" style="color: black;margin-left: 10px;">Vogue Essence Pro系列</a>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 10px;"> <!--項鍊列表-->
+                            <button type="btn btn-light" style="border: none;background-color: #21212100;" id="necklaceButton" onclick="necklace()">
+                                項鍊
+                            </button>
+                            <div id="necklacesidebar" style="display: none;">
+                                <a href="necklace.html" style="color: black;margin-left: 10px;">Wings of Freedom 系列</a>
+                                <a href="necklace.html" style="color: black;margin-left: 10px;">Vogue Essence Pro系列</a>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 10px;">  <!--香水列表-->
+                            <button type="btn btn-light" style="border: none;background-color: #21212100;" id="perfumeButton" onclick="perfume()">
+                                香水
+                            </button>
+                            <div id="perfumesidebar" style="display: none;">
+                                <a href="perfume.html" style="color: black;margin-left: 10px;">Orchid Reverie 系列</a>
+                                <a href="perfume.html" style="color: black;margin-left: 10px;">Vogue Essence Pro系列</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="collapse" id="collapseExample5">
+                    <div class="card card-body">
+                        <a href="" style="color: black;">聯絡我們</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar" id="userSidebar">  <!--登入與註冊頁面-->
+            
+            <!-- 登入表單 -->
+            <form id="loginForm">
+                <img src="p/logo/-2.svg" alt="">
+                <div id="formText">登入</div>
+                <div class="mb-3"> <!-- 登入頁面的電子郵件信箱輸入 -->
+                    <label for="loginUsermail" class="form-label">電子郵件信箱</label>
+                    <input type="email" class="form-control" id="loginUsername">
+                </div>
+                <div class="mb-3"> <!-- 登入頁面的密碼輸入 -->
+                    <label for="loginPassword" class="form-label">密碼</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="loginPassword">
+                        <button class="btn btn-outline-secondary" type="button" id="viewPassword">檢視密碼</button> <!-- 登入頁面的密碼檢視 -->
+                    </div>
+                </div>
+                    <button type="submit" class="btn btn-dark"> <a href="backstage.html" style="color: #c6c6c6;text-decoration:none;">登入</a></button> <!-- 登入按鈕，等後端進行資料驗證，現在BATE用才會連接backstage.html，之後記得更改-->    <!-- 如果資料與DataBase的相同跳轉到backstage.html-->
+            </form>
+        
+            <!-- 註冊表單 -->
+            <form id="registerForm" style="display: none;">
+                <img src="p/logo/-2.svg" alt="">
+                <div id="formText">註冊</div>
+                <div class="mb-3"> <!-- 註冊頁面的姓名輸入 -->
+                    <label for="Name" class="form-label">姓名</label>
+                    <input type="text" class="form-control" id="registerUsername">
+                </div>
+
+                <div class="mb-3"> <!-- 註冊頁面的電子郵件輸入 -->
+                    <label for="registerUsermail" class="form-label">電子郵件信箱</label>
+                    <input type="email" class="form-control" id="registerUsername">
+                </div>
+                <div class="mb-3"> <!-- 註冊頁面的密碼輸入 -->
+                    <label for="registerPassword" class="form-label">密碼</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="registerPassword">
+                        <button class="btn btn-outline-secondary" type="button" id="viewRegisterPassword">檢視密碼</button> <!-- 註冊頁面的密碼檢視 -->
+                    </div>
+                </div>
+                <div class="mb-3"> <!-- 註冊頁面的重複確認密碼輸入 -->
+                    <label for="confirmPassword" class="form-label">確認密碼</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="confirmPassword">
+                        <button class="btn btn-outline-secondary" type="button" id="viewCheckPassword">檢視密碼</button> <!-- 註冊頁面的密碼檢視 -->
+                    </div>
+                    <small id="passwordMismatch" class="text-danger" style="display: none;">密碼不一致</small> <!-- 如果密碼輸入與密碼確認輸入的不同會跳出的警告 -->
+                </div>
+                
+                <button type="submit" class="btn btn-success">註冊</button> <!-- 註冊按鈕 -->  <!-- 將資料新增到DataBase-->
+            </form>
+            
+            
+            <div style="width: 100%;height: auto; margin-top: 10%;"> <!-- 切換按鈕 -->
+                <button class="btn btn-info" id="toggleForm">建立帳號</button>
+        
+                <button class="btn btn-secondary" id="closeSidebar">關閉</button> <!-- 關閉按鈕 -->
+            </div>
+        </div>
+    </header>
+    <main>
+       <article class="maindiv">
+            <div style="height: 30px;margin-bottom: 80px;"><h1>前端組</h1></div>
+            <div class="Experience"> <!--魏俊豪-->
+                <div class="exp_right">
+                    <p>這次期末作業我負責網站主頁、登入與註冊頁面架設、與用戶後台頁面的架設，我覺得做起來蠻好玩的，可以讓我在這一學期的課堂所學都展現出來，並且在製作過程中除了感受到不少樂趣外，也讓我更加熟練這些技術，並且知道自己有哪方面的不足。
+                    </p>
+                    <div class="socia">
+                        <a href="https://www.instagram.com/jun_4.9/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg></a>
+                        <a href="https://www.instagram.com/jun_4.9/" target="_blank"> Instagram</a>
+                        <a href="mailto:ehco1256@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                          </svg></a>
+                        <a href="mailto:ehco1256@gmail.com">E-mail</a>  
+                        
+                    </div>
+
+                </div>
+                <div class="exp_left">
+                    <img src="p/member/11144145.png" alt="" >
+                    <p>魏俊豪</p>
+                    <p>資管二甲　45號</p>
+                </div>
+            </div>
+            <div class="Experience"><!--張博堯-->
+                <div class="exp_right">
+                    <P>學習網頁前端是一段極富挑戰與成長的旅程。一開始，對HTML和CSS的陌生感令我感到困惑，但透過不斷的實踐和專案實作，我逐漸掌握了排版和樣式的技巧。在專案合作中，我深刻體會到團隊協作的力量，每位成員的專業貢獻都是實現成功專案的關鍵。過程中，我學到了解決問題的耐心和方法，也發現創造力對於設計精美網頁的重要性。學習網頁前端不僅僅是技術層面的提升，更是一種對美感和用戶體驗的追求。</P>
+                    <div class="socia">
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg></a>
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"> Instagram</a>
+                        <a href="mailto:bobchangintaiwan@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                          </svg></a>
+                        <a href="mailto:bobchangintaiwan@gmail.com">E-mail</a>  
+                        
+                    </div>
+                </div>
+                <div class="exp_left">
+                    <img src="p/member/11144158.webp" alt="照片" >
+                    <p>張博堯</p>
+                    <p>資管二甲　58號</p>
+                </div>
+            </div>
+            <div class="Experience"><!--陳宣萓-->
+                <div class="exp_right">
+                    <p>這是我第一次將學到的程式實際應用在專案，在整個過程當中更像邊學邊寫。雖然很常遇到解決不了的困難需要跟組員求救，但是看到自己一點一點調整，做出想像中的頁面真的很有成就感，實際應用也讓我能夠更直觀的了解程式語言的用法以及使用方式，學習到很多不曾接觸過的知識。</p>
+                    <div class="socia">
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg></a>
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"> Instagram</a>
+                        <a href="mailto:bobchangintaiwan@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                          </svg></a>
+                        <a href="mailto:bobchangintaiwan@gmail.com">E-mail</a>  
+                        
+                    </div>
+                </div>
+                <div class="exp_left">
+                    <img src="p/member/11144125.jpg" alt="照片" >
+                    <p>陳宣萓</p>
+                    <p>資管二甲　25號</p>
+                </div>
+            </div>
+            <div style="height: 30px;margin-bottom: 80px;margin-top: 80px;"><h1>後端組</h1></div>
+            <div class="Experience"><!--楊昀儒-->
+                <div class="exp_right">
+                    <p>這次的學習體驗讓我體會到前後端開發的密切關聯，從JSP和MySQL的連接中獲得有效溝通和共同合作經驗。尤其是團隊合作的重要性在專案中得到充分體現，每位成員的專業貢獻都是成功的關鍵。在準備這個期末專題的過程中，我學到了解決問題的耐心和方法。總結，這是一次非常好學習體驗。</p>
+                    <div class="socia">
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg></a>
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"> Instagram</a>
+                        <a href="mailto:bobchangintaiwan@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                          </svg></a>
+                        <a href="mailto:bobchangintaiwan@gmail.com">E-mail</a>  
+                        
+                    </div>
+                </div>
+                <div class="exp_left">
+                    <img src="p/member/11144243.jpg" alt="照片" >
+                    <p>楊昀儒</p>
+                    <p>資管二乙　43號</p>
+                </div>
+            </div>
+            <div class="Experience"><!--張岑琳-->
+                <div class="exp_right">
+                    <p>透過使用JSP和MySQL開發購物網站，我體會到了前後端協同合作的重要性。JSP提供了直觀而靈活的前端開發方式，使得動態網頁設計更加容易。同時，MySQL的資料庫管理確保了高效的數據處理和存儲。在這次開發中，我們成功實現了用戶購物流程、商品管理以及訂單處理。透過JSP和MySQL的結合，我們能夠實現動態展示商品信息，實時更新庫存數據，提供順暢的購物體驗。然而，我們也面臨到了許多挑戰，這促使我們更深入地了解了Web應用的複雜性。總體來說，這次的開發讓我受益匪淺，不僅提升了我的技術水平，還強化了我對於購物網站開發中前後端共同合作的理解。</p>
+                    <div class="socia">
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg></a>
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"> Instagram</a>
+                        <a href="mailto:bobchangintaiwan@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                          </svg></a>
+                        <a href="mailto:bobchangintaiwan@gmail.com">E-mail</a>
+                    </div>
+                </div>
+                <div class="exp_left">
+                    <img src="p/member/11144228.jpg" alt="照片" >
+                    <p>張岑琳</p>
+                    <p>資管二乙　28號</p>
+                </div>
+            </div>
+            <div class="Experience"><!--林怡婷-->
+                <div class="exp_right">
+                    <p>透過使用JSP和MySQL開發購物網站，我體會到了前後端協同合作的重要性。JSP提供了直觀而靈活的前端開發方式，使得動態網頁設計更加容易。同時，MySQL的資料庫管理確保了高效的數據處理和存儲。在這次開發中，我們成功實現了用戶購物流程、商品管理以及訂單處理。透過JSP和MySQL的結合，我們能夠實現動態展示商品信息，實時更新庫存數據，提供順暢的購物體驗。然而，我們也面臨到了許多挑戰，這促使我們更深入地了解了Web應用的複雜性。總體來說，這次的開發讓我受益匪淺，不僅提升了我的技術水平，還強化了我對於購物網站開發中前後端共同合作的理解。</p>
+                    <div class="socia">
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg></a>
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"> Instagram</a>
+                        <a href="mailto:bobchangintaiwan@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                          </svg></a>
+                        <a href="mailto:bobchangintaiwan@gmail.com">E-mail</a>
+                    </div>
+                </div>
+                <div class="exp_left">
+                    <img src="p/member/11144232.jpg" alt="照片" >
+                    <p>林怡婷</p>
+                    <p>資管二乙　32號</p>
+                </div>
+            </div>
+            <div class="Experience"><!--蔡欣伶-->
+                <div class="exp_right">
+                    <p>在這學期的網路程式設計這門課中，我們負責後端和前端合作製作了一個購物平台網站，我們在做這個網路程式設計專題的時候，面臨了許多挑戰與困難，但也學習到了很多jsp的程式設計，以及MySQL的操作方式，這個專題讓我更加深入的了解網站的開發流程和技術要求。在製作專題的過程中，我們必需要實作各種功能，例如會員登入、購物車、產品的庫存計算等等，來實現購物網站，同時，也要使用資料庫系統來存儲和管理資料。除了技術方面，這個專題也讓我們了解了團隊合作的重要性，前端和後端相互協助、分工合作，才能完成這樣的一個網站設計。通過這次的專題報告，不僅讓我學習到了許多實用的專業知識，還提升了團隊合作和整合的能力。</p>
+                    <div class="socia">
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg></a>
+                        <a href="https://www.instagram.com/bob_chang5/" target="_blank"> Instagram</a>
+                        <a href="mailto:bobchangintaiwan@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                          </svg></a>
+                        <a href="mailto:bobchangintaiwan@gmail.com">E-mail</a>
+                    </div>
+                </div>
+                <div class="exp_left">
+                    <img src="p/member/11144210.jpg" alt="照片" >
+                    <p>蔡欣伶</p>
+                    <p>資管二乙　10號</p>
+                </div>
+            </div>
+       </article>
+    </main>
+
+</body>
+<footer>
+    <img src="p/logo/-2.svg"> <!-- logo -->
+
+    <section class="foot">
+        <section class="footcard"> <!-- 訂閱最新資訊 -->
+            <h5>訂閱最新資訊</h5>
+            <input type="email" name="mail" size="30" max="30" placeholder  ="電子郵件地址"
+                style="background-color:  #212121; color:aliceblue;border-style:none;border-bottom: 1px solid #c6c6c6;height: 20px;">
+                <button type="submit" class="e-mailbtn" id="submit_e-mail">送出</button>
+            <ul>最新訊息</ul>
+        </section>
+        <section class="footcard"> <!-- 顧客服務 -->
+            <h5>顧客服務</h5>
+            <ul>
+                聯絡我們
+            </ul>
+            <ul>
+                常見問題
+            </ul>
+        </section>
+        <section class="footcard">  <!-- 關於我們 -->
+            <h5>關於我們</h5>
+            <ul>
+                法律聲明
+            </ul>
+            <ul>
+                隱私政策
+            </ul>
+            <ul>
+                最新消息
+            </ul>
+            <ul>
+                Cookie 政策
+            </ul>
+            <ul>
+                退換貨政策
+            </ul>
+        </section>
+        <section class="footcard"> <!-- 瀏覽產品 -->
+            <h5>瀏覽產品</h5>
+            <nav>
+                <ul>
+                    戒指
+                </ul>
+                <ul>
+                    項鍊
+                </ul>
+                <ul>
+                    香水
+                </ul>
+            </nav>
+        </section>
+    </section>
+    <p style="font-size: 10pt;">@Copyright Vogue Essence 2023</P>
+</footer>
+
+</html>

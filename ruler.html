@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>後台管理系統</title>
+    <link rel="icon" href="p/icon.ico">
+    <link rel="stylesheet" href="css/ruler.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <script src="js/ruler.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <header>
+        <h2>後台管理系統</h2>
+    </header>
+
+    <div id="sidebar">
+        <ul>
+            <li><a href="index.html" onclick="changeContent('dashboard')">首頁</a></li>
+            <li><a href="#" onclick="changeContent('user')">使用者管理</a></li>
+            <li><a href="#" onclick="changeContent('product')">產品管理</a></li>
+            <li><a href="#" onclick="changeContent('order')">訂單管理</a></li>
+            <li><button class="btn btn-danger">登出</button></li>
+        </ul>
+    </div>
+
+    <div id="main-content">
+        <h2>商品列表</h2>
+
+        <button class="btn btn-primary" onclick="showModal('add')">新增商品</button>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>商品名稱</th>
+                    <th>價格</th>
+                    <th>圖片</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 商品資訊會動態加載在這裡 -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">商品管理</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- 商品表單會動態加載在這裡 -->
+                    <form id="productForm">
+                        <div class="form-group">
+                            <label for="productName">商品名稱：</label>
+                            <input type="text" class="form-control" id="productName" placeholder="輸入商品名稱" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productPrice">價格：</label>
+                            <input type="number" class="form-control" id="productPrice" placeholder="輸入價格" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productImage">上傳圖片：</label>
+                            <input type="file" class="form-control-file" id="productImage" accept="image/*">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                    <button type="button" class="btn btn-primary" onclick="saveProduct()">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

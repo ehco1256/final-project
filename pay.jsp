@@ -1,0 +1,401 @@
+<%@page contentType="text/html;charset=utf-8" language="java" import="java.sql.*"%>
+
+    <!DOCTYPE html>
+    <html lang="zh">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>付款</title>
+        <link rel="icon" href="p/icon.ico">
+        <link rel="stylesheet" href="css/style3.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    </head>
+    <body>
+        <!--連結 Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.6/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="js/script3.js"></script>
+
+            <header id="site-header">
+                <div class="logo"> <!--頂端頁-->
+                    <div class="logo-center">
+                        <a href="index.html"><img src="p/logo/-2.svg" alt=""></a>
+                    </div>
+                    <div class="logo-right">
+                        <nav style="display: flex; align-items: center;">
+                            <div id="searchContainer">
+                                <input type="text" id="searchInput" placeholder="尋找什麼....">
+                                <button type="button" id="searchButton" onclick="toggleSearch()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search mx-2" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <button class="btn btn-light btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart mx-2" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                                </svg>
+                            </button>
+                        </nav>
+                    </div>
+                    <div class="collapse" id="collapseExample6">
+                        <div class="card card-body" style="width: 300px;height: 400px;">
+                            <head>
+                                <h5 style="justify-content: center;font-weight: bold;">購物車</h5>
+                            </head>
+                            <main style="height: 80%;" class="ce6">
+                                <div class="list">
+                                <div>
+                                    <img src="p/PAY/necklace1.webp" alt="" width="100" height="100">
+                                </div>
+                                <div style="display: flex;justify-content: center;align-items: center;">
+                                    <h6>NT$ 2,880</h6>
+                                    <h6>數量：1</h6>
+                                </div>
+                                </div>
+            
+                            </main>
+                            <foot style="justify-content: center;">
+                                <a href="pay.html">
+                                    <input type="submit" value="付款" id="bta">
+                                </a>
+                            </foot>
+                        </div>
+                    </div>
+        
+                </div>
+                <div class="container"> <!--選單列-->
+                    <p>
+                        <a class="btn btn-primary btn-rotate" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            About Us
+                        </a>
+                        <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                            History
+                        </button>
+                        <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                            Services
+                        </button>
+                        <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
+                            Products
+                        </button>
+                        <button class="btn btn-primary btn-rotate" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
+                            Contact
+                        </button>
+                    </p>
+                    <!--選單列內文-->
+                    <div>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                將時尚融入生活，獻上獨特饰品、精緻项鍊及撩人香氛。點綴每位用戶，綻放獨特魅力。
+                            </div>
+                        </div>
+                        <div class="collapse" id="collapseExample2">
+                            <div class="card card-body">
+                                "Vogue Essence 源自悠久歷史，百年匠心傳承，精湛工藝雕琢細緻品質。獨創的設計靈感來自悠久歷史的瑰寶，每一件珠寶都是匠心獨運的傑作，承載著時光的記憶。品牌深深植根於傳統與時尚的交汇之地，將卓越品質傳承發揚，致敬優雅精緻的生活方式，為每位追求卓越的您打造獨一無二的精品體驗。"
+                            </div>
+                        </div>
+                        <div class="collapse" id="collapseExample3">
+                            <div class="card card-body">
+                                <a href="" style="color: black;">常見問題</a>
+                            </div>
+                        </div>
+                        <div class="collapse" id="collapseExample4">
+                            <div class="card card-body">
+                                <div style="margin-bottom: 10px;"> <!--戒指列表-->
+                                    <button type="btn btn-light" style="border: none;background-color: #21212100;" id="ringButton" onclick="ring()">
+                                        戒指
+                                    </button>
+                                    <div id="ringsidebar" style="display: none;">
+                                        <a href="" style="color: black;margin-left: 10px;">2023美式經典款</a>
+                                        <a href="" style="color: black;margin-left: 10px;">Exquisite Classics 系列</a>
+                                        <a href="" style="color: black;margin-left: 10px;">Vogue Essence Pro系列</a>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 10px;"> <!--項鍊列表-->
+                                    <button type="btn btn-light" style="border: none;background-color: #21212100;" id="necklaceButton" onclick="necklace()">
+                                        項鍊
+                                    </button>
+                                    <div id="necklacesidebar" style="display: none;">
+                                        <a href="" style="color: black;margin-left: 10px;">Wings of Freedom 系列</a>
+                                        <a href="" style="color: black;margin-left: 10px;">Vogue Essence Pro系列</a>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 10px;">  <!--香水列表-->
+                                    <button type="btn btn-light" style="border: none;background-color: #21212100;" id="perfumeButton" onclick="perfume()">
+                                        香水
+                                    </button>
+                                    <div id="perfumesidebar" style="display: none;">
+                                        <a href="" style="color: black;margin-left: 10px;">Orchid Reverie 系列</a>
+                                        <a href="" style="color: black;margin-left: 10px;">Vogue Essence Pro系列</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="collapse" id="collapseExample5">
+                            <div class="card card-body">
+                                <a href="" style="color: black;">聯絡我們</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        <main>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> <!-- 資料不齊全通知 -->
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">提示</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id='confirmBtn'>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            請填寫完整的表單內容。
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" id='confirmBtn2' >確定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-container" id="content-1">   <!-- 聯絡資料填寫-第一頁 -->
+                <div class="mc_left">
+                    <p style="font-weight: bolder;font-size: large;">聯絡資料/收件資訊</p>
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                        <input type="text" class="form-control" id="inputfirstname" placeholder="姓氏">
+                        </div>
+                        <div class="col-md-6">
+                        <input type="text" class="form-control" id="inputSecondname" placeholder="名字">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="inputPostal" placeholder="郵遞區號" maxlength="3">
+                        </div>
+                        <div class="col-md-6">
+                            <select id="inputState" class="form-select">
+                            <option value="">城市</option>
+                                <option value="">基隆市</option>
+                                <option value="">新北市</option>
+                                <option value="">台北市</option>
+                                <option value="">桃園市</option>
+                                <option value="">新竹縣</option>
+                                <option value="">苗栗縣</option>
+                                <option value="">台中市</option>
+                                <option value="">彰化縣</option>
+                                <option value="">雲林縣</option>
+                                <option value="">嘉義縣</option>
+                                <option value="">南投縣</option>
+                                <option value="">台南市</option>
+                                <option value="">高雄市</option>
+                                <option value="">屏東縣</option>
+                                <option value="">台東縣</option>
+                                <option value="">花蓮縣</option>
+                                <option value="">宜蘭縣</option>
+                                <option value="">澎湖、金馬地區</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="詳細地址">
+                        </div>
+                        <div class="col-md-6">
+                            <select id="inputState" class="form-select">
+                            <option value="">+886</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="inputPhoneNumber" placeholder="手機號碼" maxlength="10">
+                        </div>
+                        <div class="col-12">
+                        <button type="submit" class="inputbtn" onclick="showContent(2)" id="inputbtn1">輸入付款資料</button>
+                        </div>
+                    </form>
+                </div>
+                <aside>
+                <section class="card01">
+                    <h3 class="text03">訂單資訊</h3>
+<%
+//連接資料庫
+Class.forName("com.mysql.jdbc.Driver");
+
+String url="jdbc:mysql://localhost/?serverTimezone=UTC";
+Connection con=DriverManager.getConnection(url,"root","1234");
+String sql="USE `goods`";
+con.createStatement().execute(sql);
+
+//jsp連接前端
+	sql="select * from goods where id='001'";
+    ResultSet rs=con.createStatement().executeQuery(sql);
+    rs.next();
+%>      
+                <div class="container03">
+                    <div class="picture1">
+                        <img src="<%=rs.getString(4)%>" class="photo1" width="100" height="100">
+                    </div>
+        
+                    <div class="text04">
+                        <p class="text05"> <%=rs.getString(2)%> </p>
+                        <p>/*無限璀璨短鍊</p>
+                        <p>規格: silver/50cm*/</p>
+                    </div>
+                    <div class="text07">
+                        <p>NT$<%=rs.getString(3)%></p>
+                    </div>
+                </div>
+        
+                    <div class="separator"></div>
+        
+                <div class="container03">
+                    <div class="text06">
+                        <p>小計</p>
+                        <P>運費</P>
+                        <p>總額</p>
+                    </div>
+                
+                    <div class="text08">
+                        <p>NT$</p>
+                        <p>Free</p>
+                        <p>NT2,880.00</p>
+                    </div>
+                </div>
+        
+                </section>
+            </aside>
+        
+            </div>
+            <div class="main-container" id="content-2" style="display: none;">    <!-- 付款資訊-第二頁 -->
+                <div class="mc_left">
+                    <p style="font-weight: bolder;font-size: large;">付款資訊</p>
+                    <form class="row g-3">
+                        <label for="">信用卡付款</label>
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="inputCreditCard" placeholder="信用卡號碼" oninput="formatCreditCard()" maxlength="16">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="inputSecurityCode" placeholder="安全碼" maxlength="3">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="inputexpiry_date" placeholder="卡片到期日(MM/YYYY)" maxlength="7">
+                        </div>
+                        <p style="font-weight: bold;float: left;">支持付款類型：</p>
+                        <div style="justify-content: center;">
+                            <img src="p/PAY/visa_icon.svg" alt="" style="width:70px;height: 50px;margin-left: 20px;">
+                            <img src="p/PAY/paypal_icon.svg" alt="" style="width:70px;height: 50px;margin-left: 20px;">
+                            <img src="p/PAY/mastercard_icon.svg" alt="" style="width: 70px;height: 50px;margin-left: 20px;">
+                        </div>
+                        
+                        <div class="col-12">
+                        <button type="submit" class="inputbtn" onclick="showContent(3)" id="inputbtn2">提交訂單</button>
+                        </div>
+                    </form>
+
+                </div>
+                <aside>
+                <section class="card01">
+                    <h3 class="text03">訂單資訊</h3>
+                
+                <div class="container03">
+                    <div class="picture1">
+                        <img src="p/PAY/necklace1.webp" class="photo1" width="100" height="100">
+                    </div>
+        
+                    <div class="text04">
+                        <p class="text05">You Got This</p>
+                        <p>無限璀璨短鍊</p>
+                        <p>規格: silver/50cm</p>
+                    </div>
+                    <div class="text07">
+                        <p>NT2,880.00</p>
+                    </div>
+                </div>
+        
+                    <div class="separator"></div>
+        
+                <div class="container03">
+                    <div class="text06">
+                        <p>小計</p>
+                        <P>運費</P>
+                        <p>總額</p>
+                    </div>
+                
+                    <div class="text08">
+                        <p>NT2,880.00</p>
+                        <p>Free</p>
+                        <p>NT2,880.00</p>
+                    </div>
+                </div>
+        
+                </section>
+            </aside>
+        
+            </div>
+            <div class="main-container2" id="content-3" style="display: none;">  <!-- 訂單完成-第三頁 -->
+                <img src="p/PAY/if.png" alt="" style="width: 100px; height: auto;">
+                <p>訂單提交完成</p>
+
+                <a href="index.jsp">
+                    <input type="submit" value="回首頁" id="button">
+                </a>
+            </div>
+        </main>
+        <footer>
+            <img src="p/logo/-2.svg"> <!-- logo -->
+    
+            <section class="foot">
+                <section class="footcard"> <!-- 訂閱最新資訊 -->
+                    <h5>訂閱最新資訊</h5>
+                    <input type="email" name="mail" size="30" max="30" placeholder  ="電子郵件地址"
+                        style="background-color:  #212121; color:aliceblue;border-style:none;border-bottom: 1px solid #c6c6c6;height: 20px;">
+                        <button type="submit" class="e-mailbtn" id="submit_e-mail">送出</button>
+                    <ul>最新訊息</ul>
+                </section>
+                <section class="footcard"> <!-- 顧客服務 -->
+                    <h5>顧客服務</h5>
+                    <ul>
+                        聯絡我們
+                    </ul>
+                    <ul>
+                        常見問題
+                    </ul>
+                </section>
+                <section class="footcard">  <!-- 關於我們 -->
+                    <h5>關於我們</h5>
+                    <ul>
+                        法律聲明
+                    </ul>
+                    <ul>
+                        隱私政策
+                    </ul>
+                    <ul>
+                        最新消息
+                    </ul>
+                    <ul>
+                        Cookie 政策
+                    </ul>
+                    <ul>
+                        退換貨政策
+                    </ul>
+                </section>
+                <section class="footcard"> <!-- 瀏覽產品 -->
+                    <h5>瀏覽產品</h5>
+                    <nav>
+                        <ul>
+                            戒指
+                        </ul>
+                        <ul>
+                            項鍊
+                        </ul>
+                        <ul>
+                            香水
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+            <p style="font-size: 10pt;">@Copyright Vogue Essence 2023</P>
+        </footer>
+    </body>
+
+</html>
